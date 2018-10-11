@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<!-- 引入EasyUI的样式文件-->
+<link rel="stylesheet"
+                 href="../js/EasyUI/themes/default/easyui.css" type="text/css"/>
+
+<!-- 引入EasyUI的图标样式文件-->     
+<link rel="stylesheet"
+                 href="../js/EasyUI/themes/icon.css" 
+
+type="text/css"/>
+
+<link rel="stylesheet" href="../js/easyui/themes/color.css"/>
+
+<!-- uploadify -->
+<link rel="stylesheet"
+                 href="../js/uploadify/uploadify.css" 
+
+type="text/css"/>
+
+<!-- 引入jQuery -->
+<script type="text/javascript" src="/js/jquery-1.8.0.js"></script>
+
+<!-- 引入EasyUI -->
+<script type="text/javascript"
+                 src="../js/EasyUI/jquery.easyui.min.js"></script>
+
+<!-- 引入EasyUI的中文国际化js，让EasyUI支持中文 -->
+<script type="text/javascript"
+                 src="/js/EasyUI/locale/easyui-lang-zh_CN.js"></script>
+
+<!-- 引入EasyUI的中文国际化js，让EasyUI支持中文 -->
+<script type="text/javascript"
+                 src="../js/EasyUI/util-js.js"></script>
+
+<!-- uploadify -->
+<script type="text/javascript"
+                 src="../js/uploadify/jquery.uploadify.min.js"></script>
+                 
+</head>
+<body>
+ <table id="animal"></table>
+	<div id="toolbar">	
+	<div>
+		<table>
+			<tr>
+				<td>动物名称:</td>
+				<td><input id="tiao1"/></td>
+			</tr>
+			<tr>
+				<td>
+				<a href="JavaScript:queryindentList()" class="easyui-linkbutton"   data-options="iconCls:'icon-search'">查询</a>
+				</td>
+			</tr>
+		</table>
+	</div>	
+	<div> 
+		<a id="removeBtn" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true">删除</a>
+		<a id="addBtn" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>
+	</div>
+	</div>
+	
+	<!-- 新增 -->
+<div id="add" class="easyui-dialog" style="width:400px; height: 500px;padding: 10px" 
+		data-options="title:'新增',modal:true,closed:true,buttons:[{
+				text:'确认',
+				iconCls:'icon-save',
+				handler:function(){
+					guanbi();
+				}
+			},{
+				text:'关闭',
+				iconCls:'icon-cancel',
+				handler:function(){
+					$('#add').dialog('close')
+				}
+			}]">
+			<form id="fromid">
+			<table>
+				<tr>
+					<td>动物名称</td>
+					<td>
+						<input type="text" name="name" />
+					</td>
+				</tr>
+				<tr>
+					<td>动物性别</td>
+					<td>
+						<input type="radio" name="sex" value="1" />公
+						<input type="radio" name="sex" value="2" />母
+					</td>
+				</tr>
+			</table> 
+			</form>  
+	</div>
+	<!-- 修改 -->
+	<div id="update" class="easyui-dialog" style="width:400px; height: 500px;padding: 10px" 
+		data-options="title:'修改',modal:true,closed:true,buttons:[{
+				text:'确认',
+				iconCls:'icon-save',
+				handler:function(){
+					lala()
+				}
+			},{
+				text:'关闭',
+				iconCls:'icon-cancel',
+				handler:function(){
+					$('#update').dialog('close')
+				}
+			}]">
+			<form id="fromid123">
+			<table>
+				<tr>
+					<td>动物名称</td>
+					<td>
+						<input type="hidden" name="id">
+						<input type="text" name="name"/>
+					</td>
+				</tr>
+				<tr>
+					<td>动物性别</td>
+					<td>
+						<input type="radio" name="sex" value="1" />公
+						<input type="radio" name="sex" value="2" />母
+					</td>
+				</tr>
+			</table> 
+			</form>  
+	</div>
+<script type="text/javascript" src="../js/fapiao.js"></script>
+
+
+</html>

@@ -1,0 +1,21 @@
+$(function(){
+	queryUser();
+})
+function queryUser(){
+	$('#userList').datagrid({    
+	    url:'../user/queryUser',
+	    pagination:true,
+	    ctrlSelect:true,
+	    pageNumber:1,
+	    pageSize:3,
+	    pageList:[3,6,9],
+	    columns:[[ 
+			{field:'ckid',checkbox:true},
+	        {field:'id',title:'用户id',width:100},				  		           
+	        {field:'loginNumber',title:'账号',width:100},		 	   
+	        {field:'name',title:'用户名称',width:100},   		          
+	        {field:'password',title:'密码',width:100},
+	        {field:'roleName',title:'用户角色',width:100}	        	           
+	    ]]   
+	});  
+}
